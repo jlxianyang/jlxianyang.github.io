@@ -7,25 +7,22 @@
 
 </div>
 <script>
-function loadDoc() {
-  var xhttp;
-if (window.XMLHttpRequest) {
-    xhttp = new XMLHttpRequest();
-    } else {
-    // code for IE6, IE5
-     xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-}
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML =
-      this.responseText;
+function loadDoc(){
+    var xmlhttp = null;
+    if (window.XMLHttpRequest){
+        xmlhttp=new XMLHttpRequest();
+    }else if (window.ActiveXObject){
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
     }
-  };
-  //
-  xhttp.withCredentials=true;
-  xhttp.open("GET","https://my.58.com/persondata",true)
-  xhttp.send();
-}
+    if (xmlhttp!=null){
+        var requrl = 'https://my.58.com/persondata';//url可以是相对路径也可以是绝对，get需要将参数放在url里，如果参数有中文先调用encodeURIComponent("username=张三&age=10")编一下码
+        xmlhttp.open( "GET",requrl,true);//第一个参数指明访问方式，第二次参数是目标url，第三个参数是“是否异步”，true表示异步，false表示同步
+        xmlhttp.send();
+        return xmlhttp.responseText
+    }else{
+        alert("您的浏览器不支持AJAX！");
+    }
+};
 </script>
 </body>
 </html>
