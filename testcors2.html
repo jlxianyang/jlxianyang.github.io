@@ -1,16 +1,35 @@
+
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Fetch text example</title>
+
+    <link rel="stylesheet" href="style.css">
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
   <body>
+    <h1>Fetch text example</h1>
+    
     <article>
     </article>
-  <script>
-     var myArticle = document.querySelector('article');
 
-      function getData(pageId) {
-      console.log(pageId);
-        var myInit = { method: 'GET',
+  </body>
+  <script>
+    var myArticle = document.querySelector('article');
+    var myInit = { method: 'GET',
                        mode: 'no cors',
                        credentials:'include'
                 }
+
+    function getData(pageId) {
+      console.log(pageId);
       var myRequest = new Request(pageId,myInit);
 
       fetch(myRequest)
@@ -30,5 +49,7 @@
         );
       });
     }
-  getData(('https://my.58.com/persondata')
-  </script></body></html>
+    getData("https://my.58.com/persondata")
+
+  </script>
+</html>
