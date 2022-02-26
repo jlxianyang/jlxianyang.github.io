@@ -7,20 +7,17 @@
 
 </div>
 <script>
-  var p;
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("demo").innerHTML =
-      p=this.getResponseHeader('set-cookie');
-      alert(p);
-      
+      this.responseText;
     }
   };
   //
-  xhttp.withCredentials=true;
-  xhttp.open("GET","https://license.58.com/license/newLicense/licensethird?uploadSrc=1&pId=1&appId=QtBjPFpw&userId=85962910116871",true);
+  xhttp.withCredentials=false;
+  xhttp.open("GET","https://my.58.com/person",true)
   xhttp.send();
 }
 </script>
