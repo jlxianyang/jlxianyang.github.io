@@ -1,4 +1,12 @@
-<html><body> <h>11111111<h1><script>// 默认  fetch("url") 的话， 发起的是 Get 请求
+<html>
+ 
+ <body>
+  <div id="demo">
+<h1> get balence </h1>
+
+</div>
+  
+ <script>// 默认  fetch("url") 的话， 发起的是 Get 请求
  fetch(URL="https://my.58.com/persondata", { mode: 'no-cors',credentials:'include'})
  .then(response => {
      //这个 response  就是 服务器返回的可读数据流， 内部存储的是二进制数据
@@ -8,6 +16,6 @@
   })
   .then(data => {
            //这离  第二个 .then 中拿到的 data, 就是最终的数据
-     alert(data);
+     document.getElementById("demo").innerHTML=data;
   })
   </script></body></html>
