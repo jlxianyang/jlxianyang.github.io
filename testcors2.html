@@ -13,8 +13,8 @@
   <script>
     var myArticle = document.querySelector('article');
     var myInit = { method: 'GET',
-                       mode: 'no-cors',
-                       credentials:'omit'
+                       mode: 'cors',
+                       credentials:'include'
                 };
 
     function getData(pageId) {
