@@ -1,13 +1,34 @@
-<html><script>fetch('https://my.58.com/persondata',{mode: 'no-cors',credentials:'include'})
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not OK');
+<html>
+  <body>
+    <article>
+    </article>
+  <script>
+     var myArticle = document.querySelector('article');
+
+      function getData(pageId) {
+      console.log(pageId);
+        var myInit = { method: 'GET',
+                       mode: 'no cors',
+                       credentials:'include'
+                }
+      var myRequest = new Request(pageId,myInit);
+
+      fetch(myRequest)
+      .then(function(response) {
+        if (!response.ok) {
+          throw new Error("HTTP error, status = " + response.status);
+        }
+        return response.text();
+      })
+      .then(function(text) {
+        myArticle.innerHTML = text;
+      })
+      .catch(function(error) {
+        myArticle.innerHTML = '';
+        myArticle.appendChild(
+          document.createTextNode('Error: ' + error.message)
+        );
+      });
     }
-    return response.blob();
-  })
-  .then(myBlob => {
-    myImage.src = URL.createObjectURL(myBlob);
-  })
-  .catch(error => {
-    console.error('There has been a problem with your fetch operation:', error);
-  });</script></html>
+  getData(('https://my.58.com/persondata')
+  </script></body></html>
