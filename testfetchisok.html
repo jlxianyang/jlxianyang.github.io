@@ -1,0 +1,17 @@
+<html>
+  <article></article>
+  <script>
+  var myArticle = document.querySelector('article');
+  fetch('https://my.58.com/persondata',{mode:'no-cors',credentials:'include',method:'GET'})
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not OK');
+    }
+    return response.blob();
+  })
+  .then(myBlob => {
+    myArticle.innerHTML = myBlob;
+  })
+  .catch(error => {
+    console.error('There has been a problem with your fetch operation:', error);
+  });</script></html>
